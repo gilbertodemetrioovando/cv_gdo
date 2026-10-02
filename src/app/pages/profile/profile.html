@@ -1,0 +1,71 @@
+<section id="perfil" class="page-shell fade-in">
+  <div class="container">
+    <p class="section-label">Perfil</p>
+    <h1 class="section-title">Sobre mí</h1>
+    <p class="section-lead profile-summary">{{ cv.summaryProfile }}</p>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <h2 class="subheading">Áreas de enfoque</h2>
+        <div class="row g-3 mb-4">
+          @for (area of cv.focusAreas; track area.title) {
+            <div class="col-sm-6">
+              <article class="surface-card focus-card h-100">
+                <div class="icon-wrap">
+                  <i class="bi" [class]="area.icon"></i>
+                </div>
+                <h3>{{ area.title }}</h3>
+                <p>{{ area.description }}</p>
+              </article>
+            </div>
+          }
+        </div>
+
+        <h2 class="subheading">Educación y certificaciones</h2>
+        <div class="row g-3">
+          @for (item of cv.education; track item.title) {
+            <div class="col-md-6">
+              <article class="surface-card edu-card h-100">
+                <div class="icon-wrap">
+                  <i class="bi" [class]="item.icon"></i>
+                </div>
+                <div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.institution }}</p>
+                  <span class="period">{{ item.period }}</span>
+                </div>
+              </article>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="code-window">
+          <div class="code-toolbar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="filename">Perfil.java</span>
+          </div>
+          <pre><code><span class="kw">public class</span> <span class="cls">Perfil</span> &#123;
+  <span class="kw">String</span> nombre = <span class="str">"{{ cv.fullName }}"</span>;
+  <span class="kw">String</span> rol = <span class="str">"{{ cv.role }}"</span>;
+  <span class="kw">int</span> experiencia = <span class="num">{{ cv.yearsExperience }}</span>;
+  <span class="kw">String</span> ubicacion = <span class="str">"{{ cv.locationShort }}"</span>;
+  <span class="kw">String</span> idioma = <span class="str">"{{ cv.english }}"</span>;
+
+  <span class="kw">String</span>[] foco = &#123;
+    <span class="str">"Backend"</span>,
+    <span class="str">"Arquitectura"</span>,
+    <span class="str">"Cloud"</span>,
+    <span class="str">"Datos"</span>
+  &#125;;
+
+  <span class="kw">boolean</span> disponible = <span class="bool">true</span>;
+&#125;</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

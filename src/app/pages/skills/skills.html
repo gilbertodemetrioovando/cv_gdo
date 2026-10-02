@@ -1,0 +1,32 @@
+<section id="skills" class="page-shell fade-in">
+  <div class="container">
+    <p class="section-label">Competencias</p>
+    <h1 class="section-title">Habilidades técnicas</h1>
+    <p class="section-lead">
+      Stack orientado a backend Java empresarial, microservicios, cloud y calidad de software.
+    </p>
+
+    <div class="row g-4">
+      @for (group of cv.skillGroups; track group.title) {
+        <div class="col-lg-6" [class.col-xl-4]="group.items.length <= 4">
+          <article class="surface-card skill-card h-100">
+            <div class="skill-head">
+              <div class="icon-wrap">
+                <i class="bi" [class]="group.icon"></i>
+              </div>
+              <h2>{{ group.title }}</h2>
+            </div>
+            <div class="skill-grid">
+              @for (item of group.items; track item.name) {
+                <div class="skill-item">
+                  <i [class]="item.icon"></i>
+                  <span>{{ item.name }}</span>
+                </div>
+              }
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

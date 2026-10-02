@@ -1,0 +1,46 @@
+<aside class="sidebar" [class.open]="menuOpen">
+  <div class="sidebar-top">
+    <a href="#inicio" class="brand" (click)="scrollTo('inicio', $event)">
+      <span class="brand-mark">{{ cv.initials }}</span>
+      <span class="brand-text">
+        <strong>{{ cv.name }}</strong>
+        <small>{{ cv.role }}</small>
+      </span>
+    </a>
+  </div>
+
+  <nav class="nav-links" aria-label="Secciones del CV">
+    @for (link of links; track link.id) {
+      <a
+        [href]="'#' + link.id"
+        class="nav-link"
+        [class.active]="activeSection() === link.id"
+        (click)="scrollTo(link.id, $event)"
+      >
+        <i class="bi" [class]="link.icon"></i>
+        <span>{{ link.label }}</span>
+      </a>
+    }
+  </nav>
+
+  <div class="sidebar-bottom">
+    <a class="btn btn-accent download-btn" [href]="cv.cvFile" download (click)="closeMenu()">
+      <i class="bi bi-download me-1"></i>
+      Descargar CV
+    </a>
+  </div>
+</aside>
+
+<button
+  class="menu-toggle"
+  type="button"
+  [attr.aria-expanded]="menuOpen"
+  aria-label="Abrir menú"
+  (click)="toggleMenu()"
+>
+  <i class="bi" [class.bi-list]="!menuOpen" [class.bi-x-lg]="menuOpen"></i>
+</button>
+
+@if (menuOpen) {
+  <div class="sidebar-backdrop" (click)="closeMenu()" aria-hidden="true"></div>
+}

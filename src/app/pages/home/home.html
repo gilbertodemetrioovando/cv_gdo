@@ -1,0 +1,67 @@
+<section id="inicio" class="page-shell home-page fade-in">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-7">
+        <p class="hello">Hola, soy</p>
+        <h1 class="hero-name">{{ cv.name }}</h1>
+        <h2 class="hero-role">{{ cv.role }}</h2>
+        <p class="hero-summary">{{ cv.summary }}</p>
+
+        <div class="hero-tags">
+          @for (tag of cv.heroTags; track tag) {
+            <span class="tech-pill">{{ tag }}</span>
+          }
+        </div>
+
+        <div class="hero-actions">
+          <a href="#experiencia" class="btn btn-accent">
+            Ver mi trayectoria
+            <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+          <a class="btn btn-ghost" [href]="cv.cvFile" download>
+            <i class="bi bi-download me-1"></i>
+            Descargar CV
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="avatar-stage">
+          <div class="avatar-ring">
+            <div class="avatar-core" aria-hidden="true">
+              <span>{{ cv.initials }}</span>
+            </div>
+          </div>
+          <div class="role-chip">
+            <span class="dot"></span>
+            {{ cv.roleEn }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <i class="bi bi-briefcase"></i>
+        <div>
+          <strong>{{ cv.yearsExperience }}+ años</strong>
+          <span>de experiencia</span>
+        </div>
+      </div>
+      <div class="stat">
+        <i class="bi bi-geo-alt"></i>
+        <div>
+          <strong>{{ cv.locationShort }}</strong>
+          <span>{{ cv.location }}</span>
+        </div>
+      </div>
+      <div class="stat">
+        <i class="bi bi-lightning-charge"></i>
+        <div>
+          <strong>Disponibilidad</strong>
+          <span>{{ cv.availability }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

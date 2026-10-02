@@ -1,0 +1,106 @@
+<section id="contacto" class="page-shell contact-page fade-in">
+  <div class="container">
+    <p class="section-label">Contacto</p>
+    <h1 class="section-title">Hablemos</h1>
+    <p class="section-lead">
+      ¿Tienes una oportunidad o un proyecto? Escríbeme y conversemos.
+    </p>
+
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-5">
+        <div class="surface-card contact-info h-100">
+          <ul class="info-list">
+            <li>
+              <span class="icon"><i class="bi bi-envelope"></i></span>
+              <div>
+                <strong>Email</strong>
+                <a [href]="'mailto:' + cv.email">{{ cv.email }}</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon"><i class="bi bi-telephone"></i></span>
+              <div>
+                <strong>Teléfono</strong>
+                <a [href]="'tel:' + cv.phoneRaw">{{ cv.phone }}</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon"><i class="bi bi-geo-alt"></i></span>
+              <div>
+                <strong>Ubicación</strong>
+                <span>{{ cv.location }}</span>
+              </div>
+            </li>
+            <li>
+              <span class="icon"><i class="bi bi-linkedin"></i></span>
+              <div>
+                <strong>LinkedIn</strong>
+                <a [href]="cv.linkedin" target="_blank" rel="noopener noreferrer">Perfil profesional</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon"><i class="bi bi-github"></i></span>
+              <div>
+                <strong>GitHub</strong>
+                <a [href]="cv.github" target="_blank" rel="noopener noreferrer">Repositorios</a>
+              </div>
+            </li>
+          </ul>
+
+          <a class="btn btn-accent w-100 mt-3" [href]="cv.cvFile" download>
+            <i class="bi bi-download me-1"></i>
+            Descargar CV
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <form class="surface-card contact-form h-100" (ngSubmit)="sendMessage()">
+          <h2>Enviar un mensaje</h2>
+          <div class="mb-3">
+            <label class="form-label" for="name">Nombre</label>
+            <input
+              id="name"
+              class="form-control"
+              name="name"
+              [(ngModel)]="name"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="message">Mensaje</label>
+            <textarea
+              id="message"
+              class="form-control"
+              name="message"
+              rows="5"
+              [(ngModel)]="message"
+              placeholder="Cuéntame sobre la oportunidad o el proyecto"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent">
+            Enviar mensaje
+            <i class="bi bi-arrow-right ms-1"></i>
+          </button>
+          @if (submitted) {
+            <p class="form-note">Se abrirá tu cliente de correo para completar el envío.</p>
+          }
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

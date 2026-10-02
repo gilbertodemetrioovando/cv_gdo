@@ -1,0 +1,132 @@
+.subheading {
+  font-size: 1.15rem;
+  margin: 0 0 1rem;
+  color: var(--text-primary);
+}
+
+.profile-summary {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.focus-card {
+  h3 {
+    font-size: 1.05rem;
+    margin: 0.85rem 0 0.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+}
+
+.icon-wrap {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.85rem;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent-bright);
+  font-size: 1.2rem;
+}
+
+.edu-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  h3 {
+    font-size: 0.98rem;
+    margin: 0 0 0.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+
+  .period {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--accent-bright);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+.code-window {
+  background: #0a0f1a;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-glow);
+  position: sticky;
+  top: 1.5rem;
+}
+
+.code-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+
+  &.red {
+    background: #f87171;
+  }
+  &.yellow {
+    background: #fbbf24;
+  }
+  &.green {
+    background: #34d399;
+  }
+}
+
+.filename {
+  margin-left: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+pre {
+  margin: 0;
+  padding: 1.25rem 1.35rem 1.5rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.kw {
+  color: #c084fc;
+}
+.cls {
+  color: #67e8f9;
+}
+.str {
+  color: #86efac;
+}
+.num {
+  color: #fbbf24;
+}
+.bool {
+  color: #60a5fa;
+}

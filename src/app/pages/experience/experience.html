@@ -1,0 +1,34 @@
+<section id="experiencia" class="page-shell fade-in">
+  <div class="container">
+    <p class="section-label">Trayectoria</p>
+    <h1 class="section-title">Experiencia laboral</h1>
+    <p class="section-lead">
+      Más de {{ cv.yearsExperience }} años construyendo soluciones Java en fintech, banca y
+      plataformas empresariales.
+    </p>
+
+    <div class="timeline">
+      @for (job of cv.experience; track job.company; let i = $index) {
+        <article class="timeline-item" [style.animation-delay]="i * 80 + 'ms'">
+          <div class="period">{{ job.period }}</div>
+          <div class="marker" aria-hidden="true"></div>
+          <div class="surface-card job-card">
+            <div class="job-top">
+              <div>
+                <h2>{{ job.company }}</h2>
+                <p class="role">{{ job.role }}</p>
+              </div>
+              <i class="bi bi-arrow-up-right"></i>
+            </div>
+            <p class="desc">{{ job.description }}</p>
+            <div class="tags">
+              @for (tech of job.tech; track tech) {
+                <span class="tech-pill">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
